@@ -13,7 +13,7 @@ const Assessment = ({count, question, decrement}) => (
         {data.length === question ? <Score score={count.reduce((c, v) => c + v, 0)} /> : <Question data={data}/> }
       </div>
       <div>
-      <button
+      {question ? <button
         type="button"
         onClick={() => decrement()}
         className="btn btn-primary back"
@@ -23,7 +23,8 @@ const Assessment = ({count, question, decrement}) => (
           aria-hidden="true"
         />
         Back
-      </button>
+      </button> : null
+      }
     </div>
     </div>
   </div>
