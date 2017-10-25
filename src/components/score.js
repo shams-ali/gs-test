@@ -4,7 +4,7 @@ const Score = ({score}) => (
   <div>
     <h1>Score</h1>
 
-    <p>{score}</p>
+    <h2>{score}</h2>
   </div>
 )
 
