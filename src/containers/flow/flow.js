@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import FlowQuestion from './flowQuestion';
 
 class Flow extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      prevQuestion: {},
+      current: 0,
       error: '',
       success: false,
     };
@@ -29,12 +28,20 @@ class Flow extends Component {
   }
 
   render() {
-    const { answer, error, success } = this.state;
+    const { data } = this.props;
+    const { current } = this.state;
     return (
       <div className="flow-wrap">
         <div className="row">
           <div className="col-md-offset-3 col-md-6 text-center">
-            <FlowQuestion />
+            <FlowQuestion
+              data={data}
+              question={data[current]}
+              current={current}
+              handleNext={this.handleNext}
+              handleBack={this.handleBack}
+              handleSubmit={this.handleSubmit}
+            />
           </div>
         </div>
       </div>

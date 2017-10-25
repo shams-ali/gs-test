@@ -1,21 +1,21 @@
 /* eslint max-len: 0 */
 import React from 'react';
 
-const FlowQuestion = () => (
+const FlowQuestion = ({data, question, current, handleNext, handleBack, handleSubmit}) => (
   <div>
     <div className="row">
       <div>
         <h3>header 3</h3>
         <button
           type="button"
-          onClick={() => console.log('hi')}
+          onClick={handleNext}
           className="btn btn-default"
         >
           Yes
         </button>
         <button
           type="button"
-          onClick={() => console.log('hi')}
+          onClick={handleNext}
           className="btn btn-default"
         >
           No
@@ -25,7 +25,7 @@ const FlowQuestion = () => (
     <div>
       <button
         type="button"
-        onClick={() => console.log('hi')}
+        onClick={handleBack}
         className="btn btn-default back"
       >
         <span
