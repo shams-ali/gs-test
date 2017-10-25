@@ -8,15 +8,15 @@ const App = () => (
     <nav className="navbar navbar-inverse">
       <div className="container-fluid">
         <div className="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>                        
+        <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span className="icon-bar"></span>
+          <span className="icon-bar"></span>
+          <span className="icon-bar"></span>                        
         </button>
           <Link className="navbar-brand" to="/">Home</Link>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav">
+        <div className="collapse navbar-collapse" id="myNavbar">
+          <ul className="nav navbar-nav">
             <li><Link className="active" to="/assessment">Assessment</Link></li>
           </ul>
         </div>
