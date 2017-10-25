@@ -8,12 +8,11 @@ import {
   decrement,
   decrementAsync
 } from '../../modules/counter';
-import data from '../../flow';
 
 const Home = props => (
   <div>
     <h1>Home</h1>
-    <p>Count: {props.count}</p>
+    {/* <p>Count: {props.count}</p>
 
     <p>
       <button onClick={props.increment} disabled={props.isIncrementing}>Increment</button>
@@ -23,9 +22,9 @@ const Home = props => (
     <p>
       <button onClick={props.decrement} disabled={props.isDecrementing}>Decrement</button>
       <button onClick={props.decrementAsync} disabled={props.isDecrementing}>Decrement Async</button>
-    </p>
+    </p> */}
 
-    <p><button onClick={() => props.changePage()}>Go to about page via redux</button></p>
+    <p><button onClick={() => props.changePage()}>Start Assessment</button></p>
   </div>
 )
 
