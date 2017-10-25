@@ -5,10 +5,23 @@ import Assessment from '../assessment'
 
 const App = () => (
   <div>
-    <header>
-      <Link to="/">Home</Link>
-      <Link to="/assessment">Assessment</Link>
-    </header>
+    <nav className="navbar navbar-inverse">
+      <div className="container-fluid">
+        <div className="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+          <Link className="navbar-brand" to="/">Home</Link>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li><Link className="active" to="/assessment">Assessment</Link></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
     <main>
       <Route exact path="/" component={Home} />

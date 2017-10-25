@@ -4,10 +4,11 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 const Home = props => (
-  <div>
-    <h1>Home</h1>
-
-    <p><button onClick={() => props.changePage()}>Start Assessment</button></p>
+  <div class="jumbotron">
+    <div class="container text-center">
+      <h1>Home</h1>      
+      <p><button className="btn btn-primary" onClick={() => props.changePage()}>Start Assessment</button></p>
+    </div>
   </div>
 )
 

@@ -16,7 +16,7 @@ const Assessment = ({count, question, decrement}) => (
       <button
         type="button"
         onClick={() => decrement()}
-        className="btn btn-default back"
+        className="btn btn-primary back"
       >
         <span
           className="glyphicon glyphicon-menu-left"
