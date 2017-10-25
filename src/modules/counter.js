@@ -4,13 +4,14 @@ export const DECREMENT_REQUESTED = 'counter/DECREMENT_REQUESTED'
 export const DECREMENT = 'counter/DECREMENT'
 
 const initialState = {
-  count: 0,
+  count: [],
+  question: 0,
   isIncrementing: false,
   isDecrementing: false
 }
 
-export default (state = initialState, action) => {
-  switch (action.type) {
+export default (state = initialState, {type, points}) => {
+  switch (type) {
     case INCREMENT_REQUESTED:
       return {
         ...state,
@@ -20,7 +21,9 @@ export default (state = initialState, action) => {
     case INCREMENT:
       return {
         ...state,
-        count: state.count + 1,
+        previousCount: state.count,
+        count: state.count.concat(points),
+        question: state.question + 1,
         isIncrementing: !state.isIncrementing
       }
 
@@ -32,8 +35,9 @@ export default (state = initialState, action) => {
 
     case DECREMENT:
       return {
-        ...state,
-        count: state.count - 1,
+        ...state,      
+        count: state.count.slice(0, -1),
+        question: state.question && state.question - 1,        
         isDecrementing: !state.isDecrementing
       }
 
@@ -42,26 +46,28 @@ export default (state = initialState, action) => {
   }
 }
 
-export const increment = () => {
+export const increment = (points) => {
   return dispatch => {
     dispatch({
-      type: INCREMENT_REQUESTED
+      type: INCREMENT_REQUESTED,
     })
 
     dispatch({
-      type: INCREMENT
+      type: INCREMENT,
+      points
     })
   }
 }
 
-export const decrement = () => {
+export const decrement = (points) => {
   return dispatch => {
     dispatch({
       type: DECREMENT_REQUESTED
     })
 
     dispatch({
-      type: DECREMENT
+      type: DECREMENT,
+      points
     })
   }
 }
